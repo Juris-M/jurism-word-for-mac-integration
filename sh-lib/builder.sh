@@ -55,8 +55,21 @@ function xx-add-install-check-module () {
     cp ../additives/install_check.jsm resource
 }
 
+function xx-fix-uuids () {
+    sed -si "s/aa56c6c0-95f0-48c2-b223-b11b96b9c9e5/4D06FB64-2DDD-11E5-9A06-31DA1D5D46B0/g" chrome.manifest
+    sed -si "s/aa56c6c0-95f0-48c2-b223-b11b96b9c9e5/4D06FB64-2DDD-11E5-9A06-31DA1D5D46B0/g" components/zoteroMacWordIntegration.js
+    sed -si "s/ea584d70-2797-4cd1-8015-1a5f5fb85af7/5684D472-2DDD-11E5-B567-32DA1D5D46B0/g" chrome.manifest
+    sed -si "s/ea584d70-2797-4cd1-8015-1a5f5fb85af7/5684D472-2DDD-11E5-B567-32DA1D5D46B0/g" components/zoteroMacWordIntegration.js
+    sed -si "s/9c6e787b-27d7-4567-98d4-b57d0afa3d8c/6051A408-2DDD-11E5-9064-8ADA1D5D46B0/g" chrome.manifest
+    sed -si "s/9c6e787b-27d7-4567-98d4-b57d0afa3d8c/6051A408-2DDD-11E5-9064-8ADA1D5D46B0/g" components/zoteroMacWordIntegration.js
+    sed -si "s/b063dd87-5615-45c5-ac3d-4b0583034616/68DE1872-2DDD-11E5-B1F2-8EDA1D5D46B0/g" chrome.manifest
+    sed -si "s/b063dd87-5615-45c5-ac3d-4b0583034616/68DE1872-2DDD-11E5-B1F2-8EDA1D5D46B0/g" components/zoteroMacWordIntegration.js
+    sed -si "s/26522064-b955-4bb0-9ccb-37a5c8c96fa0/716558F2-2DDD-11E5-8D23-8FDA1D5D46B0/g" chrome.manifest
+    sed -si "s/26522064-b955-4bb0-9ccb-37a5c8c96fa0/716558F2-2DDD-11E5-8D23-8FDA1D5D46B0/g" components/zoteroMacWordIntegration.js
+}
+
 function xx-apply-patch () {
-    patch -p1 < ../additives/macword-install-check.patch >> "${LOG_FILE}" 2<&1
+    patch -p1 < ../additives/word-install-check.patch >> "${LOG_FILE}" 2<&1
 }
 
 
