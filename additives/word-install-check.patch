@@ -7,7 +7,7 @@ diff -r -u a/components/zoteroMacWordIntegration.js b/components/zoteroMacWordIn
  
 +var InstallChecker = Components.utils.import("resource://zotero-macword-integration/install_check.jsm").Checker;
 +InstallChecker(
-+    "Juris-M Word Plugin chooser", 
++    "Juris-M Word-for-Mac Plugin chooser", 
 +    "Select the plugin to match your setup", 
 +    "jurismMacWordIntegration@juris-m.github.io", 
 +    "Mac Word Integration for Juris-M", 
