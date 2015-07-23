@@ -1,0 +1,18 @@
+diff -u -r resource/installer_common.jsm resource.NEW/installer_common.jsm
+--- a/resource/installer_common.jsm	2015-07-23 16:39:47.739007131 +0900
++++ b/resource/installer_common.jsm	2015-07-23 16:38:59.271005796 +0900
+@@ -264,9 +264,13 @@
+ 			
+ 			// check versions
+ 			try {
++				var compVer = (checkAddon.id == "juris-m@juris-m.github.io") ? Zotero.version : this._addons[i+1].version;
++				if (compVer) {
++					compVer = ("" + compVer).replace(/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).*/, "$1");
++				}
+ 				comp = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
+ 					.getService(Components.interfaces.nsIVersionComparator)
+-					.compare((checkAddon.id == "juris-m@juris-m.github.io" ? Zotero.version : this._addons[i+1].version), checkAddon.minVersion);
++					.compare(compVer, checkAddon.minVersion);
+ 			} catch(e) {
+ 				comp = null;
+ 			}

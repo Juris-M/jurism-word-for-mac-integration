@@ -100,8 +100,9 @@ function xx-insert-copyright-blocks () {
     sed -si "/END OF INSERT/,/END LICENSE/d" components/zoteroMacWordIntegration.js
 }
 
-function xx-apply-patch () {
+function xx-apply-patches () {
     patch -p1 < ../additives/word-install-check.patch >> "${LOG_FILE}" 2<&1
+    patch -p1 < ../additives/version-comparison.patch >> "${LOG_FILE}" 2<&1
 }
 
 
@@ -124,9 +125,9 @@ function build-the-plugin () {
         xx-fix-target-id
         xx-add-update-key
         xx-add-install-check-module
-	xx-fix-uuids
+	    xx-fix-uuids
         xx-fix-install
-        xx-apply-patch
+        xx-apply-patches
         xx-insert-copyright-blocks
         xx-make-the-bundle
         cd ..
