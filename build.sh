@@ -6,7 +6,7 @@ set -e
 
 # Constants
 PRODUCT="Juris-M Word for Mac Integration"
-IS_BETA=0
+IS_BETA="false"
 FORK="jurism-word-for-mac-integration"
 BRANCH="master"
 CLIENT="jurism-word-for-mac-integration"
