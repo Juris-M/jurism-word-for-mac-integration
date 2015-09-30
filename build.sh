@@ -10,8 +10,9 @@ IS_BETA=0
 FORK="jurism-word-for-mac-integration"
 BRANCH="master"
 CLIENT="jurism-word-for-mac-integration"
-VERSION_ROOT="3.5.11m"
-COMPILED_PLUGIN_URL="https://download.zotero.org/integration/Zotero-MacWord-Plugin-3.5.11.xpi"
+VERSION_ROOT="3.5.12m"
+COMPILED_PLUGIN_URL="https://download.zotero.org/integration/Zotero-MacWord-Plugin-3.5.12.xpi"
+#COMPILED_PLUGIN_URL="https://download.zotero.org/integration/Zotero-MacWord-Plugin-3.5.11.xpi"
 
 # Error handlers
 . sh-lib/errors.sh
