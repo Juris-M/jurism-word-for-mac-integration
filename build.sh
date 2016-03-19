@@ -12,6 +12,7 @@ BRANCH="master"
 CLIENT="jurism-word-for-mac-integration"
 VERSION_ROOT="3.5.12m"
 COMPILED_PLUGIN_URL="https://download.zotero.org/integration/Zotero-MacWord-Plugin-3.5.12.xpi"
+SIGNED_STUB="juris_m_word_for_mac_integration-"
 
 function xx-make-build-directory () {
     if [ -d "build" ]; then
