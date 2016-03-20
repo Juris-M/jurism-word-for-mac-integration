@@ -29,6 +29,10 @@ function xx-retrieve-compiled-plugin () {
     rm -f compiled-plugin.xpi
 }
 
+function xx-grab-install-rdf () {
+    cp ../install.rdf .
+}
+
 function xx-fix-product-ids () {
     # LO
     sed -si "s/zoteroOpenOfficeIntegration@zotero.org/jurismOpenOfficeIntegration@juris-m.github.io/g" install.rdf
@@ -55,22 +59,6 @@ function xx-fix-contributor () {
 function xx-install-icon () {
     cp ../additives/mlz_z_32px.png install/zotero.png
     cp ../additives/mlz_z_32px.png chrome/zotero.png
-}
-
-function xx-fix-homepage-url () {
-    sed -si "s/<em:homepageURL>.*<\/em:homepageURL>/<em:homepageURL>https:\/\/juris-m.github.io\/downloads<\/em:homepageURL>/" install.rdf
-}
-
-function xx-fix-icon-url () {
-    sed -si "s/<em:iconURL>.*<\/em:iconURL>/<em:iconURL>chrome:\/\/zotero-macword-integration\/content\/zotero.png<\/em:iconURL>/" install.rdf
-}
-
-function xx-fix-target-id () {
-    sed -si "s/zotero@chnm.gmu.edu/juris-m@juris-m.github.io/g" install.rdf
-}
-
-function xx-add-update-key () {
-    sed -si "/<\/em:unpack>/a\        <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJqWvOZqiHGp8hLJI92KIp6t1pKP2Q2t+5glUh7JSl+2pdt8y9ANHT1Bx3YrKDi1xwXJ7FNi4mss5XFqEmuJf2TDn02+V6D0hFsNEsSlkCcsznwnCYzeU8GKAhlgjeXz7YPQswLLSk61af/hIhdYUEyYQbxmIAOHDHgMeRcuYJ+QIDAQAB</em:updateKey>" install.rdf
 }
 
 function xx-add-install-check-module () {
@@ -126,16 +114,13 @@ function build-the-plugin () {
 
         cd build
         xx-retrieve-compiled-plugin
+        xx-grab-install-rdf
         set-install-version
         xx-install-icon
         xx-fix-product-ids
         xx-fix-product-name
         xx-fix-contributor
         xx-install-icon
-        xx-fix-homepage-url
-        xx-fix-icon-url
-        xx-fix-target-id
-        xx-add-update-key
         xx-add-install-check-module
 	    xx-fix-uuids
         xx-fix-install
