@@ -14,12 +14,14 @@ VERSION_ROOT="3.5.14m"
 COMPILED_PLUGIN_URL="https://download.zotero.org/integration/Zotero-MacWord-Plugin-3.5.14.xpi"
 SIGNED_STUB="juris_m_word_for_mac_integration-"
 
+set +e
 gsed --version > /dev/null 2<&1
 if [ $? -gt 0 ]; then
     GSED="sed"
 else
     GSED="gsed"
 fi
+set -e
 
 
 function xx-make-build-directory () {
